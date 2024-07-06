@@ -1,0 +1,10 @@
+name = "deflate"
+description = "(De)/(In)flate compression algorithm implementation"
+version = "0.1.0-dev"
+
+authors = ["Miko Elbrecht"]
+maintainers = ["Miko Elbrecht <pmt.mailservice@gmail.com>"]
+maintainers-logins = ["meownium"]
+licenses = "GPL-3.0-or-later"
+website = "https://javart.zip"
+tags = ["deflate", "inflate", "flate", "compression"]
