@@ -1,4 +1,6 @@
-with Interfaces.C.Extensions; use Interfaces.C.Extensions;
+with Interfaces;
+with Interfaces.C.Extensions;
+
 with Checksum;
 
 package Compression.ZLib is
@@ -19,22 +21,22 @@ package Compression.ZLib is
                               DEFAULT => 2,
                               SLOWEST => 3);
 
-   type HeaderFlags is record
-      Check            : Unsigned_5;
+   type Header_Flags is record
+      Check            : Interfaces.C.Extensions.Unsigned_5;
       PresetDictionary : Boolean;
       CompressionLevel : Compression_Level;
    end record with Pack, Size => 8;
 
    type Header is record
       CompressionMethod : Compression_Method;
-      WindowSize        : Unsigned_4;
-      Flags             : HeaderFlags;
-   end record with Size => 16;
+      WindowSize        : Interfaces.C.Extensions.Unsigned_4;
+      Flags             : Header_Flags;
+   end record with Pack, Size => 16;
 
    type Data (CompressedLength : Interfaces.Unsigned_32) is record
       ZLibHeader : Header;
       Compressed : Checksum.Byte_Array (1 .. CompressedLength);
-      Adler32    : Unsigned_32;
+      Adler32    : Interfaces.Unsigned_32;
    end record with Pack;
 
 end Compression.ZLib;
