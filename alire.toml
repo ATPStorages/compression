@@ -1,5 +1,5 @@
-name = "deflate"
-description = "(De)/(In)flate compression algorithm implementation"
+name = "compression"
+description = "Algorithms for data compression"
 version = "0.1.0-dev"
 
 authors = ["Miko Elbrecht"]
@@ -7,4 +7,10 @@ maintainers = ["Miko Elbrecht <pmt.mailservice@gmail.com>"]
 maintainers-logins = ["meownium"]
 licenses = "GPL-3.0-or-later"
 website = "https://javart.zip"
-tags = ["deflate", "inflate", "flate", "compression"]
+tags = ["jpeg", "zlib", "deflate", "inflate", "flate", "compression"]
+
+[[depends-on]]
+checksum = "~0.1.0-dev"
+
+[[pins]]
+checksum = { path='../checksum' }
